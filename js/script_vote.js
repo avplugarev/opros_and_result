@@ -1,29 +1,26 @@
-const dog = 'https://sf-pyw.mosyag.in/sse/vote/dogs'
-const cat = 'https://sf-pyw.mosyag.in/sse/vote/cats'
-const parrot = 'https://sf-pyw.mosyag.in/sse/vote/parrots'
-
 const dog_btn = document.querySelector('#dog');
 const cat_btn = document.querySelector('#cat');
 const parrot_btn = document.querySelector('#parrot');
 
 function sendVote(animal) {
     let xhr = new XMLHttpRequest();
+    let url_post  = new URL ('https://sf-pyw.mosyag.in/sse/vote/'+animal);
     let send_data=''
-    xhr.open("POST", animal, true)
+    xhr.open("POST", url_post, true)
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     xhr.send(send_data);
 }
 
 dog_btn.onclick = () => {
-    sendVote(dog)
+    sendVote(dogs)
 }
 
 cat_btn.onclick = () => {
-    sendVote(cat)
+    sendVote(cats)
 }
 
 parrot_btn.onclick = () => {
-    sendVote(parrot)
+    sendVote(parrots)
 }
 
 
