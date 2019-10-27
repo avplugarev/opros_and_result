@@ -9,18 +9,25 @@ function sendVote(animal) {
     xhr.open("POST", url_post, true)
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
     xhr.send(send_data);
+    //альтернативный вариант отправки $.post(url)
 }
-
 dog_btn.onclick = () => {
-    sendVote(dogs)
+    sendVote('dogs')
 }
 
 cat_btn.onclick = () => {
-    sendVote(cats)
+    sendVote('cats')
 }
 
 parrot_btn.onclick = () => {
-    sendVote(parrots)
+    sendVote('parrots')
 }
+
+
+
+
+
+
+
 
 

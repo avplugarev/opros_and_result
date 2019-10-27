@@ -18,7 +18,7 @@ ES.onerror = error => {
 
 ES.onmessage = message => {
     data = JSON.parse(message.data);
-    generalResults=data.cats+data.dogs+data.parrots
+    generalResults=data.cats+data.dogs+data.parrots;
 
     progress_cats.style.cssText = `width: ${Math.round(data.cats/(generalResults/100))}%;`
     progress_cats.textContent = `${data.cats}`
